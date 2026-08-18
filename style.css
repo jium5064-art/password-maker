@@ -73,8 +73,16 @@ button:active {
     font-weight: bold;
 }
 
+.result-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 #result {
+    flex: 1;
     min-height: 25px;
+    margin: 0;
     padding: 15px;
     background: #111827;
     border: 1px solid #E5E7EB;
@@ -83,4 +91,11 @@ button:active {
     font-size: 20px;
     font-weight: bold;
     word-break: break-all;
+    overflow: hidden;
+}
+
+#copyButton {
+    margin-top: 0;
+    padding: 12px;
+    white-space: nowrap;
 }
