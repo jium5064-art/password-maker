@@ -6,7 +6,7 @@ function makePassword() {
     let result = document.getElementById("result");
 
     message.textContent = "";
-    result.textContent = "################";
+    result.textContent = "●●●●●●";
     realPassword = "";
 
     if (input === "") {
@@ -51,7 +51,7 @@ function makePassword() {
         realPassword += chars[random];
     }
 
-    result.textContent = "#".repeat(length);
+    result.textContent = "●".repeat(length);
 }
 
 async function copyPassword() {
@@ -70,9 +70,9 @@ async function copyPassword() {
     }
 }
 
-// 화면의 ####는 일반 복사(Ctrl+C)로 복사되지 않게 함
+// 화면의 ●●●는 일반 복사(Ctrl+C)로 복사되지 않게 함
 // 복사는 오직 📋 복사 버튼을 통해서만 가능
- document.addEventListener("copy", function(event) {
+document.addEventListener("copy", function(event) {
     const result = document.getElementById("result");
     const selection = window.getSelection();
 
