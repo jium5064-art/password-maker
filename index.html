@@ -14,7 +14,10 @@
         <button onclick="makePassword()">비밀번호 만들기</button>
         <p id="message"></p>
         <p class="result-title">생성된 비밀번호:</p>
-        <p id="result">아직 생성되지 않았습니다.</p>
+        <div class="result-row">
+            <p id="result">################</p>
+            <button id="copyButton" onclick="copyPassword()">📋 복사</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
