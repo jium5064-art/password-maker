@@ -92,6 +92,8 @@ button:active {
     font-weight: bold;
     word-break: break-all;
     overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 #copyButton {
