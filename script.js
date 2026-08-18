@@ -1,17 +1,19 @@
+let realPassword = "";
+
 function makePassword() {
     let input = document.getElementById("passwordLength").value;
     let message = document.getElementById("message");
     let result = document.getElementById("result");
 
     message.textContent = "";
-    result.textContent = "아직 생성되지 않았습니다.";
+    result.textContent = "################";
+    realPassword = "";
 
     if (input === "") {
         message.textContent = "비밀번호 길이를 입력하세요!";
         return;
     }
 
-    // "3."은 3으로 처리
     if (input.endsWith(".")) {
         input = input.slice(0, -1);
     }
@@ -44,12 +46,26 @@ function makePassword() {
         "0123456789" +
         "!@#$%^&*";
 
-    let password = "";
-
     for (let i = 0; i < length; i++) {
         let random = Math.floor(Math.random() * chars.length);
-        password += chars[random];
+        realPassword += chars[random];
     }
 
-    result.textContent = password;
+    result.textContent = "#".repeat(length);
+}
+
+async function copyPassword() {
+    let message = document.getElementById("message");
+
+    if (realPassword === "") {
+        message.textContent = "먼저 비밀번호를 만들어 주세요!";
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(realPassword);
+        message.textContent = "✅ 복사 완료!";
+    } catch (error) {
+        message.textContent = "❌ 복사하지 못했습니다.";
+    }
 }
