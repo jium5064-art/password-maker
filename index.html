@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Password Maker</h1>
+        <p>비밀번호 길이:</p>
+        <input id="passwordLength" type="number" min="1" max="100" step="any" placeholder="예: 12">
+        <button onclick="makePassword()">비밀번호 만들기</button>
+        <p id="message"></p>
+        <p class="result-title">생성된 비밀번호:</p>
+        <p id="result">아직 생성되지 않았습니다.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
